@@ -7,21 +7,21 @@ import { Component } from '@angular/core';
 })
 export class BirthdayCardComponent {
   showVoucher = false; // Controla el cambio entre las cartas
+  isFlipped = false;   // Controla si la tarjeta está volteada
 
   // Alternar entre las cartas al hacer clic
   toggleCard() {
-    this.showVoucher = !this.showVoucher; // Cambia el estado entre la primera y segunda carta
+    this.isFlipped = !this.isFlipped; // Voltea la tarjeta
     this.playSound();
-    if (this.showVoucher) {
-      this.launchFireworks(); // Lanza los fuegos artificiales cuando aparece la segunda carta
+    if (this.isFlipped) {
+      this.showVoucher = !this.showVoucher; // Alternar entre la primera y segunda carta
+      this.launchFireworks(); // Lanza los fuegos artificiales cuando cambia la carta
     }
   }
 
-
-
   // Función para reproducir sonido
   playSound() {
-    const audio = new Audio('../sound.mp3'); // Ruta del archivo de sonido
+    const audio = new Audio('./sound.mp3'); // Ruta del archivo de sonido
     audio.play();
   }
 

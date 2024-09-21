@@ -1,14 +1,16 @@
 <div class="card-container" (click)="toggleCard()">
-  <div class="card" *ngIf="!showVoucher">
+  <!-- Primera carta: "Feliz Cumpleaños" -->
+  <div class="card" *ngIf="!showVoucher" [ngClass]="{'flipped': isFlipped}">
     <div class="front">
       🎁
     </div>
     <div class="back">
-      <h1>¡Feliz Cumpleaños!</h1>
+      <h1>¡Feliz Cumpleaños Preciosa!</h1>
     </div>
   </div>
 
-  <div class="card" *ngIf="showVoucher">
+  <!-- Segunda carta: "Te amo muchísimo" -->
+  <div class="card" *ngIf="showVoucher" [ngClass]="{'flipped': isFlipped}">
     <div class="front">
       🎁
     </div>
@@ -17,4 +19,3 @@
     </div>
   </div>
 </div>
-

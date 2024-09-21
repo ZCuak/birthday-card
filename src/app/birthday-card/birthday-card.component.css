@@ -51,11 +51,12 @@ body, html {
     transform: rotateY(180deg);
   }
   
-  .card:hover .front {
+  /* Aplicar la clase 'flipped' para activar la animación */
+.card.flipped .front {
     transform: rotateY(180deg);
   }
   
-  .card:hover .back {
+  .card.flipped .back {
     transform: rotateY(360deg);
   }
   
@@ -72,69 +73,6 @@ body, html {
   }
   
   
-/* Firework container */
-.firework {
-    position: absolute;
-    bottom: 0; /* Empezar desde la parte inferior */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: fireup 2s ease-out forwards, explode 0.5s ease-out 2s forwards;
-  }
-  
-  @keyframes fireup {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-500px); /* Subir el cohete */
-      opacity: 1;
-    }
-  }
-  
-  @keyframes explode {
-    0% {
-      width: 10px;
-      height: 10px;
-      background-color: #ff0000;
-      opacity: 1;
-    }
-    100% {
-      width: 100px; /* El cohete explota */
-      height: 100px;
-      background-color: transparent;
-      opacity: 0;
-      box-shadow: 0 0 50px 50px rgba(255, 165, 0, 0.8); /* Simulación de la explosión */
-    }
-  }
 
-  /* Caja pequeña debajo de la tarjeta */
-.small-box {
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-    background-color: #f39c12;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .small-box:hover {
-    background-color: #e67e22;
-  }
-  
-  /* Mensaje que aparece después de hacer clic */
-  .message {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #2980b9;
-  }
-  
+
+ 
